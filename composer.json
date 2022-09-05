@@ -18,7 +18,6 @@
         "spatie/yaml-front-matter": "^2.0"
     },
     "require-dev": {
-        "barryvdh/laravel-ide-helper": "^2.12",
         "fakerphp/faker": "^1.9.1",
         "friendsofphp/php-cs-fixer": "^3.10",
         "laravel/dusk": "^6.25",
@@ -50,9 +49,7 @@
         ],
         "post-update-cmd": [
             "@php artisan vendor:publish --tag=laravel-assets --ansi --force",
-            "Illuminate\\Foundation\\ComposerScripts::postUpdate",
-            "@php artisan ide-helper:generate",
-            "@php artisan ide-helper:meta"
+            "Illuminate\\Foundation\\ComposerScripts::postUpdate"
         ],
         "post-root-package-install": [
             "@php -r \"file_exists('.env') || copy('.env.example', '.env');\""
