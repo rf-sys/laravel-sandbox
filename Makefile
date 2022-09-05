@@ -6,3 +6,12 @@ php-cs-fix-dry-run:
 
 php-cs-fix:
 	./vendor/bin/php-cs-fixer fix --verbose --diff app
+
+ide-helper-meta:
+	php artisan ide-helper:meta
+
+ide-helper-models:
+	php artisan ide-helper:models
+
+ide-helper-docs:
+	php artisan ide-helper:generate
