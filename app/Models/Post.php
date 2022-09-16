@@ -20,8 +20,24 @@ class Post extends Model
         $query->when(
             $filters['search'] ?? false,
             fn (Builder $query, string $search) => $query
-            ->where('title', 'like', '%' . $search . '%')
-            ->orWhere('body', 'like', '%' . $search . '%')
+                ->where('title', 'like', '%' . $search . '%')
+                ->orWhere('body', 'like', '%' . $search . '%')
+        );
+
+        $query->when(
+            $filters['category'] ?? false,
+            fn (Builder $query, string $category) => $query->whereHas(
+                'category',
+                fn (Builder $query) => $query->where('slug', $category)
+            )
+        );
+
+        $query->when(
+            $filters['author'] ?? false,
+            fn (Builder $query, string $username) => $query->whereHas(
+                'author',
+                fn (Builder $query) => $query->where('username', $username)
+            )
         );
     }
 
