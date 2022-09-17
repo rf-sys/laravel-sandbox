@@ -20,8 +20,11 @@ class Post extends Model
         $query->when(
             $filters['search'] ?? false,
             fn (Builder $query, string $search) => $query
-                ->where('title', 'like', '%' . $search . '%')
-                ->orWhere('body', 'like', '%' . $search . '%')
+                ->where(
+                    fn (Builder $query) => $query
+                    ->where('title', 'like', '%' . $search . '%')
+                    ->orWhere('body', 'like', '%' . $search . '%')
+                )
         );
 
         $query->when(
