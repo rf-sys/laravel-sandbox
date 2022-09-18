@@ -1,6 +1,3 @@
-static-check:
-	./vendor/bin/psalm
-
 php-cs-fix-dry-run:
 	./vendor/bin/php-cs-fixer fix --verbose --dry-run --diff app
 
@@ -16,5 +13,5 @@ ide-helper-models:
 ide-helper-facades:
 	php artisan ide-helper:generate
 
-php-phpstan:
+static-check:
 	./vendor/bin/phpstan analyse
