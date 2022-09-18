@@ -15,3 +15,6 @@ ide-helper-models:
 
 ide-helper-facades:
 	php artisan ide-helper:generate
+
+php-phpstan:
+	./vendor/bin/phpstan analyse
