@@ -17,7 +17,7 @@ class Post extends Model
     protected $with = ['category', 'author'];
 
     /**
-     * @param Builder $query
+     * @param Builder<Post> $query
      * @param array<string, string> $filters
      * @return void
      */
@@ -50,11 +50,17 @@ class Post extends Model
         );
     }
 
+    /**
+     * @return BelongsTo<Category, Post>
+     */
     public function category(): BelongsTo
     {
         return $this->belongsTo(Category::class);
     }
 
+    /**
+     * @return BelongsTo<User, Post>
+     */
     public function author(): BelongsTo
     {
         return $this->belongsTo(User::class, 'user_id');
