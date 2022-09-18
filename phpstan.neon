@@ -3,7 +3,7 @@ includes:
 parameters:
     paths:
         - app
-    level: 5
+    level: 6
     ignoreErrors:
     excludePaths:
     checkGenericClassInNonGenericObjectType: false

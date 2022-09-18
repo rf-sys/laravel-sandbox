@@ -11,8 +11,16 @@ class Post extends Model
 {
     use HasFactory;
 
+    /**
+     * @var array<int, string>
+     */
     protected $with = ['category', 'author'];
 
+    /**
+     * @param Builder $query
+     * @param array<string, string> $filters
+     * @return void
+     */
     public function scopeFilter(Builder $query, array $filters): void
     {
         $query->when(
