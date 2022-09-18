@@ -13,5 +13,5 @@ ide-helper-meta:
 ide-helper-models:
 	php artisan ide-helper:models --no-interaction
 
-ide-helper-docs:
+ide-helper-facades:
 	php artisan ide-helper:generate
