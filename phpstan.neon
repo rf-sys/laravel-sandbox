@@ -6,3 +6,4 @@ parameters:
     level: 5
     ignoreErrors:
     excludePaths:
+    checkGenericClassInNonGenericObjectType: false
