@@ -14,7 +14,7 @@
                         <div class="ml-3 text-left">
                             <h5 class="font-bold">
                                 <h5 class="font-bold">
-                                    <a href="/?author={{$post->author->username}}">{{ $post->author->name }}</a>
+                                    <a href="/?author={{ $post->author->username }}">{{ $post->author->name }}</a>
                                 </h5>
                             </h5>
                         </div>
@@ -39,7 +39,7 @@
                         </a>
 
                         <div class="space-x-2">
-                           <x-category-button :category="$post->category"/>
+                            <x-category-button :category="$post->category"/>
                         </div>
                     </div>
 
