@@ -4,8 +4,8 @@ services:
   database:
     image: postgres:14-alpine
     environment:
-      POSTGRES_DB: laravel
-      POSTGRES_PASSWORD: 44wKzGteZg8ZfuVTzZ
-      POSTGRES_USER: colbeypq
+      POSTGRES_DB: '${DB_DATABASE}'
+      POSTGRES_USER: '${DB_USERNAME}'
+      POSTGRES_PASSWORD: '${DB_PASSWORD}'
     ports:
       - "5432:5432"
