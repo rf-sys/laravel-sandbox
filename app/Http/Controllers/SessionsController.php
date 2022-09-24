@@ -23,6 +23,8 @@ class SessionsController extends Controller
 
         // checks the credentials and logs in
         if (auth()->attempt($attributes)) {
+            session()->regenerate();
+
             return redirect('/')->with('success', 'Welcome Back!');
         }
 
