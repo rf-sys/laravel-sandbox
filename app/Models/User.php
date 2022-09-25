@@ -49,12 +49,13 @@ class User extends Authenticatable
 
     /**
      * @link https://laravel.com/docs/9.x/eloquent-mutators#defining-a-mutator
+     *
      * @return Attribute<string, string>
      */
     protected function password(): Attribute
     {
         return Attribute::make(
-            set: fn(string $password) => bcrypt($password)
+            set: fn (string $password) => bcrypt($password)
         );
     }
 

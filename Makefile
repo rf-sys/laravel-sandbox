@@ -1,8 +1,8 @@
 php-cs-fix-dry-run:
-	./vendor/bin/php-cs-fixer fix --verbose --dry-run --diff app
+	./vendor/bin/pint --test
 
 php-cs-fix:
-	./vendor/bin/php-cs-fixer fix --verbose --diff app
+	./vendor/bin/pint
 
 ide-helper-meta:
 	php artisan ide-helper:meta

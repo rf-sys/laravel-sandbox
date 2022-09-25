@@ -15,14 +15,14 @@ class PostController extends Controller
             ->withQueryString();
 
         return view('posts.index', [
-            'posts' => $posts
+            'posts' => $posts,
         ]);
     }
 
     public function show(Post $post): View
     {
         return view('posts.show', [
-            'post' => $post
+            'post' => $post,
         ]);
     }
 }

@@ -17,8 +17,8 @@ class Post extends Model
     protected $with = ['category', 'author'];
 
     /**
-     * @param Builder<Post> $query
-     * @param array<string, string> $filters
+     * @param  Builder<Post>  $query
+     * @param  array<string, string>  $filters
      * @return void
      */
     public function scopeFilter(Builder $query, array $filters): void
@@ -28,8 +28,8 @@ class Post extends Model
             fn (Builder $query, $search) => $query
                 ->where(
                     fn (Builder $query) => $query
-                        ->where('title', 'like', '%' . $search . '%')
-                        ->orWhere('body', 'like', '%' . $search . '%')
+                        ->where('title', 'like', '%'.$search.'%')
+                        ->orWhere('body', 'like', '%'.$search.'%')
                 )
         );
 

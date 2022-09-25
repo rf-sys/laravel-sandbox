@@ -17,7 +17,7 @@ class RegisterController extends Controller
     {
         // Laravel will store validated fields into an array to be used later
         $attributes = request()->validate([
-            'name'  => ['required', 'max:255'],
+            'name' => ['required', 'max:255'],
             'username' => ['required', 'min:3', 'max:255', 'unique:users,username'],
             'email' => ['required', 'email', 'max:255', 'unique:users,email'],
             'password' => ['required', 'min:7', 'max:255'],
