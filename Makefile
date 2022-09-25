@@ -1,6 +1,3 @@
-php-cs-fix-dry-run:
-	./vendor/bin/pint --test
-
 php-cs-fix:
 	./vendor/bin/pint
 
