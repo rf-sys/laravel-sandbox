@@ -11,10 +11,10 @@ class NewsletterController extends Controller
 {
     public function __invoke(Newsletter $newsletter): RedirectResponse
     {
-        request()->validate(['email' => 'required|email']);
+        $attributes = request()->validate(['email' => 'required|email']);
 
         try {
-            $newsletter->subscribe(request()->string('email'));
+            $newsletter->subscribe($attributes['email']);
         } catch (Exception) {
             throw ValidationException::withMessages([
                 'email' => 'This email could not be added to our newsletter list.'
