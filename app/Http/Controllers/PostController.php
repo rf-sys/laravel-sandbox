@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Post;
 use Illuminate\Contracts\View\View;
+use Symfony\Component\HttpFoundation\Response;
 
 class PostController extends Controller
 {
@@ -25,4 +26,10 @@ class PostController extends Controller
             'post' => $post,
         ]);
     }
+
+    public function create(): View
+    {
+        return view('posts.create');
+    }
+
 }
