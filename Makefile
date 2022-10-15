@@ -6,7 +6,7 @@ php-cs-fix:
 # Static analyzer
 
 static-check:
-	./vendor/bin/phpstan analyse
+	php -d memory_limit=4G ./vendor/bin/phpstan analyse
 
 # IDE Helper
 
